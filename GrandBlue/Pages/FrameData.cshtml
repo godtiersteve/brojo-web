@@ -1,0 +1,115 @@
+﻿@page "{chara}"
+@model GrandBlue.FrameDataModel
+@{
+    ViewData["Title"] = "Frame Data";
+}
+
+<div class="framedata">
+    @foreach(var list in Model.FrameDataLists) {
+    <table class="frame-table">
+        <tr>
+            <th colspan="10" class="table-heading">@list.HeadingName</th>
+        </tr>
+        <tr class="frame-heading">
+            <th rowspan="2">Move Name</th>
+            <th rowspan="2">Version</th>
+            <th colspan="3">Frame</th>
+            <th colspan="2">Recovery</th>
+            <th rowspan="2">Damage</th>
+            <th rowspan="2">Guard Type</th>
+            <th rowspan="2">Notes</th>
+        </tr>
+        <tr class="frame-heading">
+            <th>Startup</th>
+            <th>Active</th>
+            <th>Recovery</th>
+            <th>On Block</th>
+            <th>On Hit</th>
+        </tr>
+        @foreach (var item in list.FrameData)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoveName)
+                    <br />
+                    @if (item.ButtonID != "")
+                    {
+                        <img src="@Href(GrandBlue.Data.Properties.GetButtonURL(item.ButtonID))" class="input-image"/>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Version)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Startup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Recovery)
+                </td>
+                @{
+                    int i;
+                    Int32.TryParse(item.OnBlock, out i);
+                    if (i < 0)
+                    {
+                        if (i < -5)
+                        {
+                            <td class="negative">
+                                @Html.DisplayFor(modelItem => item.OnBlock)
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="even">
+                                @Html.DisplayFor(modelItem => item.OnBlock)
+                            </td>
+                        }
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OnBlock)
+                        </td>
+                    }
+                }
+                @{
+                    Int32.TryParse(item.OnHit, out i);
+                    if (i < 0)
+                    {
+                        if (i < -5)
+                        {
+                            <td class="negative">
+                                @Html.DisplayFor(modelItem => item.OnHit)
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="even">
+                                @Html.DisplayFor(modelItem => item.OnHit)
+                            </td>
+                        }
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OnHit)
+                        </td>
+                    }
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.Damage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuardType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+            </tr>
+        }
+    </table>
+    <br /><br />
+    }
+</div>

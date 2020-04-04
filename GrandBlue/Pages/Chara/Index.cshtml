@@ -1,0 +1,90 @@
+﻿@page
+@model GrandBlue.CharaModel
+@section Styles {
+    <link href="@Url.Content("~/css/chara.css")" rel="stylesheet" type="text/css" />
+}
+@using Microsoft.AspNetCore.Html;
+@using GrandBlue.Models;
+<div id="char-wrapper">
+    <div id="header-wrapper">
+        <img src="@Href("~/images/chars/" + Model.Character.CharacterID + ".png")" class="char-banner" />
+        <div class="char-name">@Model.Character.Name</div>
+        <div class="char-desc">
+            @{
+                HtmlString desc = new HtmlString(Model.Character.Description);
+                @desc;
+            }
+        </div>
+        <nav class="char-nav">
+            <ul>
+                <li><a href="">Overview</a></li>
+                <li>Frame Data</li>
+                <li>Combos</li>
+                <li>Match Videos</li>
+                <li>Colors</li>
+            </ul>
+        </nav>
+    </div>
+    <br /><br />
+    <div class="char-content-wrapper">
+        <div class="char-content">
+            <div class="char-overview">
+                <h4>Style: </h4>Technical<br /><br />
+                <h4>Similar To:</h4> Yuzuriha (UNICLR), Johnny (Guilty Gear)<br /><br />
+                <h4>Strengths: </h4> Narmaya has a diverse moveset which provides her options for many scenarios. While in <strong><abbr Title="Genji">Dawnfly</abbr></strong> stance,
+                Narmaya possesses fast, long-reaching attacks that, coupled with <strong>Setsuna</strong> allow her to keep her enemies at bay and punish their mistakes.
+                While in <strong><abbr title="Kagura">Freeflutter</abbr></strong> stance, Narmaya's hits lead to big damage in the corner and her fast strikes allow her to put pressure on her opponent.
+                The EX version of her special move, <strong>Crescent Moon</strong> allows her to freely reset pressure and keep the opponent flustered.
+                
+                <br /><br />
+                <h4>Weaknesses: </h4>Even in <strong><abrr title="Kagura">Freeflutter</abrr></strong> stance, Narmaya posseses few plus frames, so at times it can be hard for her to apply pressure.
+                Her special moves are almost all unsafe and risky to use, her damage is somewhat low and her SBA has difficulty connecting at anything but close range.
+                <br />
+                <h4>Play If:</h4>
+                <ul>
+                    <li>You like stances and large movesets</li>
+                    <li>You want an answer to most situations</li>
+                    <li>You love Narmaya!</li>
+                </ul>
+                <h4>Avoid If:</h4>
+                <ul>
+                    <li>Large movesets intimidate you</li>
+                    <li>You want to play aggressively at all times</li>
+                    <li>You want to deal high damage off every hit</li>
+                </ul>
+            </div>
+            <table class="move-list">
+                <tr><th colspan="2">MOVE LIST</th></tr>
+                @foreach (Move m in Model.MoveList.ListOfMoves)
+                {
+                    <tr class="@m.CssClass">
+                        <td>
+                            <h4>@Html.DisplayFor(modelItem => m.Name)</h4>
+                        </td>
+                        <td class="move-input"><img src="~/images/inputs/GBVS_U_Button.png" /></td>
+                    </tr>
+                    <tr>
+                        <td class="move-desc" colspan="2">
+                            @{
+                                HtmlString moveDesc = new HtmlString(m.Details);
+                                @moveDesc;
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    window.onscroll = function () { scrollFunction() };
+    function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("header-wrapper").style.padding = "30px 10px";
+            document.getElementById("header-wrapper").style.fontSize = "25px";
+        } else {
+            document.getElementById("header-wrapper").style.padding = "80px 10px";
+            document.getElementById("header-wrapper").style.fontSize = "35px";
+        }
+    }
+</script>

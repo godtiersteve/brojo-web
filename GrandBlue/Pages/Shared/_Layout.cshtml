@@ -1,0 +1,68 @@
+﻿<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    @RenderSection("Styles", false)
+    <title>Granblue Fanta-sea</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="navbar">
+            <a asp-page="/FrameData"><button class="dropbtn">Home</button></a>
+            <div class="dropdown">
+                <button class="dropbtn">The Basics</button>
+                <div class="dropdown-content">
+                    <a href="#">What is Granblue Fantasy Versus?</a>
+                    <a href="#">What is Granblue Fantasy?</a>
+                    <a href="#">Health & Damage</a>
+                    <a href="#">Movement & Blocking</a>
+                    <a href="#">Normals</a>
+                    <a href="#">Unique Actions</a>
+                    <a href="#">Specials</a>
+                    <a href="#">Skybound Arts</a>
+                    <a href="#">Throws</a>
+                    <a href="#">Knockdowns</a>
+                    <a href="#">Armor, Guard Points, and Invulnerability</a>
+                    <a href="#">Wallbounce & Groundbounce</a>
+                    <a href="#">Counterhits and Crushes</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Combos</button>
+                <div class="dropdown-content">
+                    <a href="#">Openers</a>
+                    <a href="#">Auto-combos</a>
+                    <a href="#">Links</a>
+                    <a href="#">Scaling</a>
+                    <a href="#">Counterhits</a>
+                    <a href="#">Anti-Airs</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Characters</button>
+                <div class="dropdown-content">
+                    <a href="#">Ferry</a>
+                    <a href="#">Gran</a>
+                    <a href="#">Lancelot</a>
+                    <a href="#">Percival</a>
+                    <a href="#">Katalina</a>
+                    <a href="#">Metera</a>
+                    <a href="#">Ladiva (Fastiva)</a>
+                    <a href="#">Charlotta</a>
+                    <a href="#">Zeta</a>
+                    <a href="#">Vaseraga</a>
+                    <a href="#">Lowain</a>
+                    <a href="/FrameData/NARM">Narmaya</a>
+                    <a asp-page="/Chara">Beelzebub</a>
+                    <a href="#">Soriz</a>
+                    <a href="#">Djeeta</a>
+                </div>
+            </div>
+            <button class="dropbtn"><a href="index.cshtml">Other</a></button>
+        </div>
+        @RenderBody()
+
+        @RenderSection("Scripts", required: false)
+    </div>
+</body>
+</html>

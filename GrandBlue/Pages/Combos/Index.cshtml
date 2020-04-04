@@ -1,0 +1,89 @@
+﻿@page
+@model GrandBlue.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="frame-table">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Combo[0].Starter)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Combo[0].Notation)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Combo[0].Position)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Combo[0].Damage)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Combo[0].MeterGain)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Combo[0].WorksOn)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Combo[0].Notes)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Combo[0].Video)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Combo[0].CharID)
+            </td>
+            <td>Edit</td>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Combo) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Starter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Damage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeterGain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorksOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @if (item.Video != null && item.Video != "")
+                {
+                    <a href="@item.Video"  target="_blank"><img src="@Href("~/images/video.png")" class="video-image" /></a>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CharID)
+            </td>
+            <td id="combo">
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

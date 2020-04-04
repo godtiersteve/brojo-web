@@ -1,0 +1,82 @@
+﻿@page
+@model GrandBlue.DetailsModel
+@using OEmbed;
+@using OEmbed.Net;
+@using OEmbed.Net.Domain;
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div class="combo-detail-wrapper">
+    <div style="margin:auto;">
+        <h4>Combo</h4>
+        <hr />
+        <dl class="combo-list">
+            <dt class="combo-term">
+                @Html.DisplayNameFor(model => model.Combo.Notation)
+            </dt>
+            <dd class="combo-descr">
+                @Html.DisplayFor(model => model.Combo.Notation)
+            </dd>
+            <dt class="combo-term">
+                @Html.DisplayNameFor(model => model.Combo.Position)
+            </dt>
+            <dd class="combo-descr">
+                @Html.DisplayFor(model => model.Combo.Position)
+            </dd>
+            <dt class="combo-term">
+                @Html.DisplayNameFor(model => model.Combo.Damage)
+            </dt>
+            <dd class="combo-descr">
+                @Html.DisplayFor(model => model.Combo.Damage)
+            </dd>
+            <dt class="combo-term">
+                @Html.DisplayNameFor(model => model.Combo.MeterGain)
+            </dt>
+            <dd class="combo-descr">
+                @Html.DisplayFor(model => model.Combo.MeterGain)
+            </dd>
+            <dt class="combo-term">
+                @Html.DisplayNameFor(model => model.Combo.WorksOn)
+            </dt>
+            <dd class="combo-descr">
+                @Html.DisplayFor(model => model.Combo.WorksOn)
+            </dd>
+            <dt class="combo-term">
+                @Html.DisplayNameFor(model => model.Combo.Notes)
+            </dt>
+            <dd class="combo-descr">
+                @Html.DisplayFor(model => model.Combo.Notes)
+            </dd>
+            <dt class="combo-term">
+                @Html.DisplayNameFor(model => model.Combo.CharID)
+            </dt>
+            <dd class="combo-descr">
+                @Html.DisplayFor(model => model.Combo.CharID)
+            </dd>
+        </dl>
+        @if (Model.Combo.Video != null && Model.Combo.Video != "")
+        {
+            <table class="embed-table">
+                <tr>
+                    <td>
+                        <script>
+                        var oembed_url = '@GrandBlue.Data.Properties.GetEmbedURL(Model.Combo.Video)';
+                        $.getJSON(oembed_url, function (data) {
+                            $(".embed").append(data.html);
+                        });
+                        </script>
+                        <p class="embed"></p>
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Combo.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

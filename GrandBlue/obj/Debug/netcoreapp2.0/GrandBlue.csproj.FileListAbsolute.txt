@@ -1,0 +1,3 @@
+C:\Users\godti\source\repos\GrandBlue\GrandBlue\obj\Debug\netcoreapp2.0\GrandBlue.csprojAssemblyReference.cache
+C:\Users\godti\source\repos\GrandBlue\GrandBlue\obj\Debug\netcoreapp2.0\GrandBlue.AssemblyInfoInputs.cache
+C:\Users\godti\source\repos\GrandBlue\GrandBlue\obj\Debug\netcoreapp2.0\GrandBlue.AssemblyInfo.cs

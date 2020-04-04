@@ -1,0 +1,71 @@
+﻿@page
+@model GrandBlue.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Combo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Combo.ID" />
+            <div class="form-group">
+                <label asp-for="Combo.Notation" class="control-label"></label>
+                <input asp-for="Combo.Notation" class="form-control" />
+                <span asp-validation-for="Combo.Notation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Combo.Position" class="control-label"></label>
+                <input asp-for="Combo.Position" class="form-control" />
+                <span asp-validation-for="Combo.Position" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Combo.Damage" class="control-label"></label>
+                <input asp-for="Combo.Damage" class="form-control" />
+                <span asp-validation-for="Combo.Damage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Combo.MeterGain" class="control-label"></label>
+                <input asp-for="Combo.MeterGain" class="form-control" />
+                <span asp-validation-for="Combo.MeterGain" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Combo.WorksOn" class="control-label"></label>
+                <input asp-for="Combo.WorksOn" class="form-control" />
+                <span asp-validation-for="Combo.WorksOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Combo.Notes" class="control-label"></label>
+                <input asp-for="Combo.Notes" class="form-control" />
+                <span asp-validation-for="Combo.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Combo.Video" class="control-label"></label>
+                <input asp-for="Combo.Video" class="form-control" />
+                <span asp-validation-for="Combo.Video" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Combo.CharID" class="control-label"></label>
+                <input asp-for="Combo.CharID" class="form-control" />
+                <span asp-validation-for="Combo.CharID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

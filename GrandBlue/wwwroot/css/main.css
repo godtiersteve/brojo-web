@@ -1,0 +1,222 @@
+body {
+	background-color: white;
+}
+#wrapper {
+	width: 100%;
+	margin: auto;
+}
+
+#navbar {
+	text-align: center;
+	width: 100%;
+	background-color:  #8abed3;
+	font-size: 16pt;
+	padding: 1.0em 0 1.0em 0;
+	display:block;
+}
+
+.banner {
+	height: 400px;
+	margin: auto;
+	background-color: white;
+	background-image: url(/images/banner.png);
+	width: 99%;
+}
+
+.banner-text {
+	font-size: 2.5em;
+	color: white;
+	text-align: center;
+	opacity: 0.75;	
+	margin-top: 355px;
+	position: absolute;
+	width: 100%;
+	background-color: black;
+}
+
+.framedata {
+	margin: auto;
+	font-size: 1.1em;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	display: block;
+}
+a:link, a:visited {
+	color: black;
+	text-decoration: none;	
+}
+.frame-table {
+	margin: auto;
+	border-spacing: 0.3em;
+	border-collapse: separate;
+	width: 1600px;
+	background-color: white;
+	font-size: 0.75em;
+	border-collapse: collapse;
+	font-size: 9pt;
+}
+
+.frame-table td:first-child {
+	max-width: 6em;
+}
+.frame-table td:last-child {
+	min-width: 13em;
+	max-width: 13em;
+	text-align: left;
+}
+table.frame-table tr {
+	background-color: white;
+	height: 35px;
+	text-align: center;
+}
+
+table.frame-table tr:hover {
+	background-color: #d8f1ff;
+}
+table.frame-table th {
+	border: 1px solid white;
+}
+table.frame-table td {
+	border: 1px solid #29495f;
+}
+
+table.frame-table tr.frame-heading {
+	background-color: #29495f;
+	color: white;
+}
+.form-wrapper {
+	width: 1600px;
+}
+.form-group {
+	display: inline-block;
+	border: 1px solid blue;
+}
+
+.combo-list {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 11pt;
+	width: 300px;
+	margin: 0 auto;
+	padding: 5px;
+	border: 1px solid black;
+}
+.combo-term {
+	background-color: #29495f;
+	color: white;
+	padding: 3px;
+	font-weight: bold;	
+}
+.combo-descr {
+	min-height: 30px;
+	margin-left: 3px;
+}
+.embed {
+
+}
+.embed-table {
+	padding-left: 50px;
+	display: inline-block;
+	float: right;
+}
+
+.combo-detail-wrapper {
+	width: 1600px;
+	margin: auto;
+}
+.full-input {
+	display: inline-block;
+	padding: 3px;
+	border: 1px solid blue;
+}
+
+input {
+	outline: none;
+	border: none;
+	display: block;
+	line-height: 1.2em;
+	font-size: 10pt;
+}
+
+label {
+	display: block;
+	font-size: 12px;
+	color: blue;
+	padding-left: 3px;
+}
+
+
+.table-heading {
+	background-color: #29495f;
+	text-align: left;
+	font-style: italic;
+	padding-left: 10px;
+	color: white;
+}
+
+.input-image {
+	max-width: 25px;
+}
+
+.video-image {
+	max-width: 15px;
+}
+
+.negative {
+	background-color: #ff5d64;
+}
+
+.even {
+	background-color: #f8e97e;
+}
+
+.empty {
+	background-color: #eeeeee;
+}
+
+#combo {
+	color: black;
+}
+
+#combo a:link{
+	color: black;
+}
+
+a:hover {
+	color: white;
+}
+
+.dropbtn {
+  background-color: #8abed3;
+  color: white;
+  padding: 0.5em;
+  margin: 0 0.25em 0 0.25em;
+  font-size: 1em;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  font-size: 0.75em;
+  z-index: 3;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #edd51b;} 
